@@ -1,0 +1,75 @@
+#include<iostream>
+using namespace std;
+
+int main () {
+    string food;
+    int choice,quantity;
+    double price,subTotal,discount,totalAmount;
+    
+    cout << "========== SCHOOL CANTEEN ==========\n";
+    cout << "1.Burger          - PHP 50\n";
+    cout << "2.Sandwich        - PHP 40\n";
+    cout << "3.Fried price     - PHP 65\n";
+    cout << "4.Spaghetti       - PHP 55\n";
+    cout << "====================================\n";
+    
+    cout << "Enter your choice: ";
+    cin >> choice;
+    
+    cout << "Enter quantity: ";
+    cin >> quantity;
+    
+    switch (choice) {
+        case 1:
+            food = "Burger\n";
+            price = 50.00;
+            break;
+            
+        case 2:
+            food = "Sandwich\n";
+            price = 40.00;
+            break;
+            
+        case 3:
+            food = "Fried Rice\n";
+            price = 65.00;
+            break;
+            
+        case 4:
+            food = "Spaghetti\n";
+            price = 55.00;
+            break;
+            
+        default:
+            cout << "Invalid menu selection. ";
+    }
+    
+    if (quantity > 0) {
+
+    double subTotal = price * quantity;
+    
+    if (subTotal >= 300.00) {
+        discount = subTotal * 0.10;
+        totalAmount = subTotal - discount;
+        
+        cout << "========== ORDER SUMMARY ==========\n";
+        cout << "Food: " << food;
+        cout << "Price: " << price << endl;
+        cout << "Quantity: " << quantity << endl;
+        cout << "Subtotal : PHP " << subTotal << endl;
+        cout << "Discount : PHP " << discount << endl;
+        cout << "Total Amount: PHP " << totalAmount << endl;
+        cout << "===================================\n";
+    } else {
+        cout << "========== ORDER SUMMARY ==========\n";
+        cout << "Food: " << food;
+        cout << "Price: " << price << endl;
+        cout << "Quantity: " << quantity << endl;
+        cout << "Subtotal : PHP " << subTotal << endl;
+        cout << "Total Amount: PHP " << subTotal << endl;
+        cout << "===================================\n";
+    }
+    
+    }   
+    return 0;
+}
