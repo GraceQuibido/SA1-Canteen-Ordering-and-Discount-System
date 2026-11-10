@@ -1,4 +1,5 @@
 #include<iostream>
+#include<iomanip>
 using namespace std;
 
 int main () {
@@ -6,11 +7,13 @@ int main () {
     int choice,quantity;
     double price,subTotal,discount,totalAmount;
     
+    cout << fixed << setprecision(2);
+    
     cout << "========== SCHOOL CANTEEN ==========\n";
-    cout << "1.Burger          - PHP 50\n";
-    cout << "2.Sandwich        - PHP 40\n";
-    cout << "3.Fried price     - PHP 65\n";
-    cout << "4.Spaghetti       - PHP 55\n";
+    cout << "1.Burger           - PHP 50\n";
+    cout << "2.Sandwich         - PHP 40\n";
+    cout << "3.Fried Rice       - PHP 65\n";
+    cout << "4.Spaghetti        - PHP 55\n";
     cout << "====================================\n";
     
     cout << "Enter your choice: ";
@@ -27,7 +30,7 @@ int main () {
             
         case 2:
             food = "Sandwich\n";
-            price = 40.00;
+            price =  40.00;
             break;
             
         case 3:
@@ -41,15 +44,15 @@ int main () {
             break;
             
         default:
-            cout << "Invalid menu selection. ";
+            cout << "Invalid menu selection.\n";
     }
     
-    if (quantity > 0) {
-
+    if (choice <=4 && quantity > 0 ) {
+    
     double subTotal = price * quantity;
     
     if (subTotal >= 300.00) {
-        discount = subTotal * 0.10;
+        discount = subTotal * .10;
         totalAmount = subTotal - discount;
         
         cout << "========== ORDER SUMMARY ==========\n";
@@ -57,19 +60,21 @@ int main () {
         cout << "Price: " << price << endl;
         cout << "Quantity: " << quantity << endl;
         cout << "Subtotal : PHP " << subTotal << endl;
-        cout << "Discount : PHP " << discount << endl;
+        cout << "Discount: PHP " << discount << endl;
         cout << "Total Amount: PHP " << totalAmount << endl;
         cout << "===================================\n";
+        
     } else {
+        
         cout << "========== ORDER SUMMARY ==========\n";
         cout << "Food: " << food;
         cout << "Price: " << price << endl;
         cout << "Quantity: " << quantity << endl;
-        cout << "Subtotal : PHP " << subTotal << endl;
+        cout << "Subtotal: PHP " << subTotal << endl;
         cout << "Total Amount: PHP " << subTotal << endl;
         cout << "===================================\n";
     }
     
-    }   
+    }
     return 0;
 }
